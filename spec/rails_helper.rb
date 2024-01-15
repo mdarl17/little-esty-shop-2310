@@ -7,7 +7,6 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'support/factory_bot'
 require 'simplecov'
-require "faker"
 require "helper_methods"
 
 SimpleCov.start
