@@ -284,7 +284,7 @@ DEPENDENCIES
   jbuilder
   launchy
   orderly
-  pg (~> 1.1)
+  pg
   pry
   puma (~> 5.0)
   rails (~> 7.0.6)
