@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: little_esty_shop_7_production
   username: little_esty_shop_7
   password: <%= ENV["LITTLE_ESTY_SHOP_7_DATABASE_PASSWORD"] %>
