@@ -1,6 +1,9 @@
-<h1>Merchant Item List</h1>
-<h1><%= @merchant.name %>'s items</h1>
-
+<h1><%= @merchant.name %> - Inventory List</h1>
+<div>
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
+<div>
 <section class='enabled-items'>
     <h1>Enabled Items</h1>
     <% @merchant.items.each do |item| %>
