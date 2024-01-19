@@ -19,8 +19,11 @@ namespace :csv_import do
     CSV.foreach(filename, headers: true) do |row|
       Merchant.create!(row.to_hash)
     end
+    
+    puts "Merchants imported"
 
     reset_primary_key_sequence('merchants')
+    
   end
 
   task customers: :environment do
@@ -30,7 +33,10 @@ namespace :csv_import do
       Customer.create!(row.to_hash)
     end
 
+    puts "Customers imported"
+    
     reset_primary_key_sequence('customers')
+
   end
 
   task invoices: :environment do
@@ -39,6 +45,8 @@ namespace :csv_import do
     CSV.foreach(filename, headers: true) do |row|
       Invoice.create!(row.to_hash)
     end
+
+    puts "Invoices imported"
 
     reset_primary_key_sequence('invoices')
   end
@@ -50,6 +58,8 @@ namespace :csv_import do
       Item.create!(row.to_hash)
     end
 
+    puts "Items imported"
+
     reset_primary_key_sequence('items')
   end
 
@@ -60,6 +70,8 @@ namespace :csv_import do
       InvoiceItem.create!(row.to_hash)
     end
 
+    puts "Invoice Items imported"
+
     reset_primary_key_sequence('invoice_items')
   end
 
@@ -69,6 +81,8 @@ namespace :csv_import do
     CSV.foreach(filename, headers: true) do |row|
       Transaction.create!(row.to_hash)
     end
+
+    puts "Transactions imported"
 
     reset_primary_key_sequence('transactions')
   end
